@@ -404,8 +404,8 @@
         var $input = $(event.target),
             $inputWrapper = self.findInputWrapper();
 
-        if (self.$element.attr('disabled')) {
-          self.$input.attr('disabled', 'disabled');
+        if (self.$element.prop('disabled')) {
+          self.$input.prop('disabled', true);
           return;
         }
 
@@ -462,8 +462,8 @@
       self.$container.on('keypress', 'input', $.proxy(function(event) {
          var $input = $(event.target);
 
-         if (self.$element.attr('disabled')) {
-            self.$input.attr('disabled', 'disabled');
+         if (self.$element.prop('disabled')) {
+            self.$input.prop('disabled', true);
             return;
          }
 
@@ -491,7 +491,7 @@
 
       // Remove icon clicked
       self.$container.on('click', '[data-role=remove]', $.proxy(function(event) {
-        if (self.$element.attr('disabled')) {
+        if (self.$element.prop('disabled')) {
           return;
         }
         self.remove($(event.target).closest('.tag').data('item'));
