@@ -373,8 +373,8 @@
       }
 
       self.$container.on('click', $.proxy(function(event) {
-        if (! self.$element.attr('disabled')) {
-          self.$input.removeAttr('disabled');
+        if (! self.$element.prop('disabled')) {
+          self.$input.prop('disabled', false);
         }
         self.$input.focus();
       }, self));
